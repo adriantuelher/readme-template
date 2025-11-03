@@ -64,8 +64,7 @@ O projeto segue um padrão MVC (Model-View-Controller) simplificado:
 
 | Componente | Classes / Páginas | Relacionamentos e Observações |
 | :--- | :--- | :--- |
-| **Model** | `Veterinario.java`, `Dono.java`, `Animal.java`, Classes DAO | **Animal-Dono:** Um dono pode ter vários animais, mas cada animal possui apenas um único dono. 
-**Animal-Veterinário:** Um animal só pode ser atendido por um único veterinário. |
+| **Model** | `Veterinario.java`, `Dono.java`, `Animal.java`, Classes DAO | **Animal-Dono:** Um dono pode ter vários animais, mas cada animal possui apenas um único dono. <br>**Animal-Veterinário:** Um animal só pode ser atendido por um único veterinário. |
 | **Controller** | Servlets e `AuthFilter` | Gerencia requisições, lógica de negócio e o filtro de autenticação. |
 | **View** | Páginas JSP | Interfaces para o usuário (login, dashboard, listagens, formulários CRUD e páginas de detalhe). |
 
