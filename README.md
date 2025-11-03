@@ -31,7 +31,6 @@ Este repositório é um projeto gratuito para a comunidade de desenvolvedores, m
 
 
 
-
 # 🐶 Sistema de Gerenciamento de Clínica Veterinária
 
 Este projeto é um sistema web básico desenvolvido em Java (Servlets/JSP) para gerenciar dados de Veterinários, Donos e Animais em uma clínica. Inclui funcionalidades de autenticação, controle de acesso e operações CRUD completas.
@@ -40,51 +39,62 @@ Este projeto é um sistema web básico desenvolvido em Java (Servlets/JSP) para 
 
 O sistema é dividido nas seguintes áreas:
 
-* cite_start**Veterinários:** CRUD completo para cadastro, listagem, edição e exclusão de veterinários[cite: 13].
-* [cite_start]**Donos:** CRUD completo para gerenciamento de clientes/donos de animais[cite: 55]. [cite_start]A página de detalhes do dono exibe todos os animais sob sua tutela[cite: 56].
-* [cite_start]**Animais:** CRUD completo para registro de animais[cite: 58]. [cite_start]Permite a seleção do Dono e do Veterinário responsável no cadastro[cite: 61, 73].
+* **Veterinários:** CRUD completo para cadastro, listagem, edição e exclusão de veterinários.
+* **Donos:** CRUD completo para gerenciamento de clientes/donos de animais. A página de detalhes do dono exibe todos os animais sob sua tutela.
+* **Animais:** CRUD completo para registro de animais. Permite a seleção do Dono e do Veterinário responsável no cadastro.
+
+---
 
 ## 🔒 Regras de Segurança e Autorização
 
-* [cite_start]**Autenticação:** O acesso a qualquer página/servlet (exceto login.jsp) é bloqueado se o usuário (Veterinário) não estiver logado (Filtro de Autenticação)[cite: 18, 19, 41, 125].
-* [cite_start]**Autorização:** Apenas veterinários logados podem criar, editar e excluir veterinários, donos e animais[cite: 42].
-* [cite_start]**Restrição de Edição/Exclusão de Animal:** Apenas o **veterinário responsável** pode editar ou excluir um animal específico[cite: 60, 105, 126].
+* **Autenticação:** O acesso a qualquer página/servlet (exceto `login.jsp`) é bloqueado se o usuário (Veterinário) não estiver logado. O controle de acesso é realizado por um Filtro de Autenticação (`AuthFilter`).
+* **Autorização:** Apenas veterinários logados podem criar, editar e excluir outros veterinários, donos e animais.
+* **Restrição de Edição/Exclusão de Animal:** Apenas o **veterinário responsável** pode editar ou excluir um animal específico.
 
-* ## 📐 Estrutura Técnica e Arquitetura
+---
+
+## 📐 Estrutura Técnica e Arquitetura
 
 O projeto segue um padrão MVC (Model-View-Controller) simplificado:
 
 | Componente | Responsável | Descrição |
 | :--- | :--- | :--- |
-| **Model** | Hugo e Luan | [cite_start]Contém as classes de modelo (`Veterinario.java`, `Dono.java`, `Animal.java`) e as classes DAO para acesso ao banco de dados (`VeterinarioDAO.java`, `DonoDAO.java`, `AnimalDAO.java`)[cite: 3, 4, 5, 44, 45, 46, 47, 48]. |
-| **Controller** | Hugo e Luan | [cite_start]Implementado via **Servlets** (`LoginServlet`, `VeterinarioServlet`, `DonoServlet`, `AnimalServlet`) para processar requisições e gerenciar a lógica de negócio[cite: 6, 7, 12, 53, 54, 57]. [cite_start]Inclui o `AuthFilter` para controle de acesso[cite: 18]. |
-| **View** | Hugo e Luan | [cite_start]Páginas **JSP** para interface com o usuário (`login.jsp`, `dashboard.jsp`, `veterinarios.jsp`, etc.) e formulários de cadastro/edição[cite: 20, 65, 114]. |
+| **Model** | Hugo e Luan | Contém as classes de modelo (`Veterinario.java`, `Dono.java`, `Animal.java`) e as classes DAO para acesso ao banco de dados (`VeterinarioDAO.java`, `DonoDAO.java`, `AnimalDAO.java`) com os métodos CRUD necessários. |
+| **Controller** | Hugo e Luan | Implementado via **Servlets** (`LoginServlet`, `VeterinarioServlet`, `DonoServlet`, `AnimalServlet`) para processar requisições e gerenciar a lógica de negócio. Inclui o `AuthFilter` para controle de acesso por sessão. |
+| **View** | Hugo e Luan | Páginas **JSP** para interface com o usuário (`login.jsp`, `dashboard.jsp`, `veterinarios.jsp`, `animais.jsp`, etc.) e formulários de cadastro/edição, além do layout geral. |
+
+---
 
 ## ⚙️ Banco de Dados (SQL)
 
 O sistema utiliza um banco de dados relacional com as seguintes tabelas e relacionamentos:
 
-* [cite_start]**Tabelas Criadas:** `veterinarios`, `donos`, `animais`[cite: 29, 77, 85, 127].
-* [cite_start]**Relacionamentos Chave:** O relacionamento entre as tabelas `animais` e `donos` e `animais` e `veterinarios` é feito por **chaves estrangeiras** (`FOREIGN KEY`)[cite: 92, 93, 94, 95].
-    * [cite_start]Um animal só pode ter um dono e um veterinário[cite: 103].
-    * [cite_start]Um dono pode ter vários animais[cite: 104].
-* [cite_start]**Dados de Teste:** O projeto inclui scripts SQL para criar e preencher as tabelas com dados iniciais de teste[cite: 28, 37, 96, 99, 127].
+* **Tabelas Criadas:** `veterinarios`, `donos`, `animais`.
+* **Relacionamentos Chave:** O relacionamento entre as tabelas `animais` e `donos` e `animais` e `veterinarios` é feito por **chaves estrangeiras** (`FOREIGN KEY`).
+    * Um animal só pode ter um dono e um veterinário.
+    * Um dono pode ter vários animais.
+* **Dados de Teste:** O projeto inclui scripts SQL para criar e preencher as tabelas com dados iniciais de teste (incluindo dois registros de veterinários e dois de donos/animais).
 
-* ## 💻 Configuração e Execução do Projeto
+---
+
+## 💻 Configuração e Execução do Projeto
 
 ### Pré-requisitos
 * JDK 8+
 * Servidor de Aplicação (Ex: Apache Tomcat)
-* Sistema de Banco de Dados (Ex: MySQL ou H2)
+* Sistema de Banco de Dados Relacional (Ex: MySQL ou H2)
 
 ### Passos:
+
 1.  **Configuração do Banco de Dados:**
     * Crie o banco de dados.
-    * [cite_start]Execute os scripts SQL contidos no arquivo ZIP (Criação de tabelas e inserção de dados de teste de `veterinarios`, `donos` e `animais`)[cite: 28, 76, 127].
-    * [cite_start]*Credenciais de teste:* Hugo (`usuario: hugo`, `senha: 1234`), Ana (`usuario: ana`, `senha: abcd`)[cite: 38, 39].
+    * Execute os scripts SQL para a criação das tabelas (`veterinarios`, `donos`, `animais`) e a inserção dos dados de teste.
+    * *Credenciais de teste disponíveis:*
+        * **Hugo:** `usuario: hugo`, `senha: 1234`
+        * **Ana:** `usuario: ana`, `senha: abcd`
 2.  **Configuração da Aplicação:**
-    * [cite_start]Ajuste as configurações de conexão JDBC no projeto (se necessário)[cite: 108].
-    * Implante o projeto no Servidor de Aplicação (Tomcat).
+    * Ajuste as configurações de conexão JDBC no projeto (se necessário, de acordo com o servidor de banco de dados escolhido).
+    * Implante o projeto (`.war`) no Servidor de Aplicação (Tomcat).
 3.  **Acesso:**
-    * Acesse a URL principal. [cite_start]Você será redirecionado para `login.jsp`[cite: 19, 21].
+    * Acesse a URL principal do projeto. Você será redirecionado para `login.jsp`.
     * Faça o login com as credenciais de teste fornecidas acima.
