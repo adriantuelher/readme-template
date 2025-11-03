@@ -33,7 +33,7 @@ Este repositório é um projeto gratuito para a comunidade de desenvolvedores, m
 
 # 🐶 Sistema de Gerenciamento de Clínica Veterinária
 
-Este projeto é um sistema web desenvolvido em Java (Servlets/JSP) para gerenciar algumas informações de uma clínica veterinária. O sistema precisa permitir o cadastro de informações de animais, veterinários e donos de animais e inclui funcionalidades de autenticação, controle de acesso e operações CRUD completas.
+Este projeto é um sistema web desenvolvido em Java para gerenciar algumas informações de uma clínica veterinária. O sistema precisa permitir o cadastro de informações de animais, veterinários e donos de animais e inclui funcionalidades de autenticação, controle de acesso e operações CRUD completas.
 
 ## 🚀 Funcionalidades Principais
 
