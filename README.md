@@ -40,7 +40,7 @@ Este projeto é um sistema web básico desenvolvido em Java (Servlets/JSP) para 
 
 O sistema é dividido nas seguintes áreas:
 
-* [cite_start]**Veterinários:** CRUD completo para cadastro, listagem, edição e exclusão de veterinários[cite: 13].
+* cite_start**Veterinários:** CRUD completo para cadastro, listagem, edição e exclusão de veterinários[cite: 13].
 * [cite_start]**Donos:** CRUD completo para gerenciamento de clientes/donos de animais[cite: 55]. [cite_start]A página de detalhes do dono exibe todos os animais sob sua tutela[cite: 56].
 * [cite_start]**Animais:** CRUD completo para registro de animais[cite: 58]. [cite_start]Permite a seleção do Dono e do Veterinário responsável no cadastro[cite: 61, 73].
 
