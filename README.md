@@ -83,7 +83,7 @@ O projeto segue um padrão MVC (Model-View-Controller) simplificado:
     * Execute o SQL para criação do banco de dados com as tabelas de `veterinarios`, `donos` e `animais`.
     * O SQL deve incluir informações prévias para teste .
 2.  **Configuração da Aplicação:**
-    * Ajuste as configurações de conexão JDBC no projeto (se necessário).
+    * Ajuste as configurações de conexão JDBC no projeto.
     * Implante o projeto no Servidor de Aplicação (Tomcat).
 
 ---
