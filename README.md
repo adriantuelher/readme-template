@@ -85,7 +85,5 @@ O projeto segue um padrão MVC (Model-View-Controller) simplificado:
 2.  **Configuração da Aplicação:**
     * Ajuste as configurações de conexão JDBC no projeto (se necessário).
     * Implante o projeto no Servidor de Aplicação (Tomcat).
-3.  **Entrega:**
-    * O projeto deve ser enviado em um arquivo ZIP contendo o projeto e o SQL para criação do banco de dados.
 
 ---
